@@ -23,6 +23,7 @@ export default {
 
 <style lang="scss" scoped>
     .container{
-
+        font-size: 20px;
+        color: #333333;
     }
 </style>

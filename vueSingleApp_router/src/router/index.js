@@ -14,7 +14,7 @@ Vue.use(Router)
 // 3. 创建 VueRouter 实例 router
 export default new Router({
   mode: 'history',
-  base: process.env.BASE_URL,
+  base: process.env.BASE_URL, //基路径:默认值为'/'.如果整个单页应用在/app/下,base就应该设为'/app/'.一般可以写成__dirname,在webpack中配置.
   linkActiveClass: 'active',
   routes: [
     {
@@ -30,7 +30,7 @@ export default new Router({
         {
           path: 'list',
           name: 'list',
-          component: () => import( /* webpackChunkName: "list" */ '@/components/List'),
+          component: () => import( /* webpackChunkName: "list" */ '@/components/List'), //路由懒加载
         },
         {
           path: 'user',
