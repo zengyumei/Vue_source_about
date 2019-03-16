@@ -1,6 +1,6 @@
 # vuesingleapp
 
-> A Vue.js project
+> 基于vue-router写的一个单页面应用实践
 
 ## Build Setup
 
