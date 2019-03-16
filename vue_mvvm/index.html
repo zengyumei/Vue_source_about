@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta charset="utf-8">
+        <title>Vue_MVVM例子</title>
+        <style>
+            #mvvm-app {
+                text-align: center;
+            }
+        </style>
+    </head>
+    <body>
+        <div id="mvvm-app">
+            <input type="text" v-model="name">
+            <p>{{ name }}</p>
+            <button v-on:click="clickme">click</button>
+        </div>
+    </body>
+    
+    <script src=observer.js></script>
+    <script src=watcher.js></script>
+    <script src=compile.js></script>
+    <script src=mvvm.js></script>
+
+    <script>
+        var vm = new MVVM ({   //通过设定对象属性的getter和setter来监听变化
+            el: '#mvvm-app',
+            data: {   //这里data下面有name属性
+                name: 'Hello, Vue',
+            },
+            methods: {
+                clickme: function(){
+                    this.name = 'Hello world.'
+                }
+            },
+            mounted: function () {
+                window.setTimeout(() => {
+                    this.name = 'Hello Hi';
+                }, 1000);
+            }
+        });
+    </script>
+
+</html>
